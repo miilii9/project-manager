@@ -41,10 +41,17 @@
 .dashboard-filter span:first-of-type:active {
   color: #000;
 }
-.projects-div {
+.home-project-section > div {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+}
+.projects-div {
+  /* display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 1rem;
+  margin-top: 1rem; */
 }

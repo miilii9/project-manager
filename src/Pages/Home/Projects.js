@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function Projects({ docs }) {
   return (
-    <div>
+    <div className='whole-proj-div'>
       {docs &&
         docs.map((doc) => {
-          const detail = doc.projectDetail;
+          // const detail = doc.projectDetail;
+          const summ = doc.projectDetail.split("").slice(0, 25).join("");
           return (
             <Link
               className='project-div'
@@ -15,7 +16,7 @@ export default function Projects({ docs }) {
               to={`projects/${doc.id}`}>
               <h3 className='project-name'>{doc.projectName}</h3>
               <p className='project-date'>Due by {doc.projectDate}</p>
-              <p className='project-detail'>{detail}</p>
+              <p className='project-detail'>{summ}</p>
             </Link>
           );
         })}

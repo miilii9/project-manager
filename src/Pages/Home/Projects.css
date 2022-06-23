@@ -9,7 +9,11 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   padding: 1rem 2rem;
-  width: 40%;
+  width: 10rem;
+  height: 8rem !important;
+  overflow: hidden;
+  text-decoration: none;
+  margin-right: 1rem;
 }
 .project-name {
   margin-top: 0.7rem;
@@ -33,4 +37,10 @@
   color: var(--primary-color);
   font-size: 2rem;
   margin: 1rem;
+}
+.whole-proj-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }

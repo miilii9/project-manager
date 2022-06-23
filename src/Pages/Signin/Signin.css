@@ -1,0 +1,57 @@
+.signin-mother-div {
+  width: 20%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  background-color: var(--bg-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
+}
+.signin-header {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.signin-pass,
+.signin-mail,
+.sign-prof,
+.signin-disp-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+.signin-pass input,
+.signin-mail input,
+.signin-disp-name input,
+.signin-prof input {
+  padding: 0.4rem 4rem;
+  border-radius: 5px;
+  border: solid 0.4px grey;
+  margin-top: 0.4rem;
+  align-self: center;
+  width: 60%;
+}
+.signin-prof input {
+  margin-top: 0.7rem;
+  color: grey;
+  font-weight: 100;
+  border: solid 0.1px grey;
+  padding: 0.6rem;
+  align-self: center;
+  width: 95%;
+}
+.signin-btn {
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+  border: solid 1px var(--primary-color);
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+}

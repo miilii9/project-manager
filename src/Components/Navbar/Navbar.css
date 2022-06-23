@@ -1,0 +1,46 @@
+.navbar {
+  width: 87%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem;
+}
+.dojo-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.dojo-div img {
+  margin-right: 1rem;
+  max-width: 25%;
+}
+.dojo-div h3 {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.link-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+}
+.link-div .login-link {
+  margin-right: 0.8rem;
+}
+.login-link,
+.signin-link {
+  text-decoration: none;
+  color: var(--header-color);
+  font-weight: 500;
+}
+.log-out-div {
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+  border: solid 1px var(--primary-color);
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}

@@ -1,0 +1,29 @@
+.statsidebar {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: flex-start;
+  width: 20%;
+  background-color: #fff;
+  height: 100vh;
+}
+.statsidebar-header {
+  font-weight: bold;
+  text-align: center;
+  font-size: x-large;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  border-bottom: solid 2px var(--text-color);
+  padding: 1rem 0;
+}
+
+.usersstat-div {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  align-items: flex-start;
+  justify-content: space-around;
+  /* padding: 1rem 0; */
+}

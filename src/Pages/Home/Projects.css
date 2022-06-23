@@ -1,0 +1,36 @@
+.project-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem 0;
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  padding: 1rem 2rem;
+  width: 40%;
+}
+.project-name {
+  margin-top: 0.7rem;
+  font-weight: 500;
+}
+.project-date {
+  color: var(--text-color);
+  margin-top: 0.7rem;
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+}
+.project-detail {
+  white-space: 0.1rem;
+  color: var(--text-color);
+  font-weight: lighter;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+}
+.no-project {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin: 1rem;
+}

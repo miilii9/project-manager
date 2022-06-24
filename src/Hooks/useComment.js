@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { projectFirestore } from "../Config/Config";
-export const useComment = async () => {
+
+export const useComment = (collection) => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const addComment = async (comment) => {
     setIsPending(true);
     setError(null);
-    let ref = projectFirestore.collection("comments");
+    let ref = projectFirestore.collection(collection);
     try {
       if (!isCancelled) {
-        const addedComment = await ref.add({
-          userName: document.Name,
+        await ref.add({
+          userName: comment.userName,
           comment: `${comment.comment}`,
           date: comment.date,
+          pageId: comment.pageId,
         });
         setIsPending(false);
       }
@@ -25,5 +27,5 @@ export const useComment = async () => {
   useEffect(() => {
     return setIsCancelled(true);
   }, []);
-  return { addComment };
+  return { addComment, error, isPending };
 };

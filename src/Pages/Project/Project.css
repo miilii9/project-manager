@@ -1,3 +1,11 @@
+.project-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 94%;
+  margin: auto;
+}
 .proj-div {
   display: flex;
   flex-direction: column;

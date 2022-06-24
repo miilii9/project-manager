@@ -1,27 +1,33 @@
 import React from "react";
 import { useState } from "react";
-import { useDocs } from "../../Hooks/useDocs";
 import { useComment } from "../../Hooks/useComment";
 import { useAuth } from "../../Hooks/useAuth";
+import "./NewComment.css";
 
-export default function NewComment() {
+export default function NewComment({ id }) {
   const [newComment, setNewComment] = useState("");
-  const { addComment, error, isPending } = useComment();
+  const { addComment, error, isPending } = useComment("comments");
   const { user } = useAuth();
 
   const formHandler = (e) => {
     e.preventDefault();
     const commentTime = new Date();
-    addComment({ userName: user.dispName, commentTime, newComment });
+    addComment({
+      userName: user.displayName,
+      commentTime,
+      newComment,
+      pageId: id,
+    });
     setNewComment("");
   };
   return (
-    <div>
+    <div className='newcomment'>
       <h2>Add new Comment</h2>
-      <form>
+      <form className='comment-form' onSubmit={formHandler}>
         <textarea
           className='comment-textarea'
-          onChange={(e) => setNewComment(e.target.value)}></textarea>
+          onChange={(e) => setNewComment(e.target.value)}
+          rows='5'></textarea>
         {!isPending && !error && (
           <button className='comment-btn'>Add comment</button>
         )}

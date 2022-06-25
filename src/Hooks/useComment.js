@@ -5,25 +5,25 @@ export const useComment = (collection) => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const addComment = async (comment) => {
+  const addComment = async (data) => {
     setIsPending(true);
     setError(null);
-    let ref = projectFirestore.collection(collection);
+    setIsCancelled(false);
+    // connecting to collection
+    let res = projectFirestore.collection(collection);
+
     try {
+      const addedDoc = await res.add({ ...data });
       if (!isCancelled) {
-        await ref.add({
-          userName: comment.userName,
-          comment: `${comment.comment}`,
-          date: comment.date,
-          pageId: comment.pageId,
-        });
         setIsPending(false);
+        setError(null);
       }
     } catch (err) {
       console.log(err.message);
       setError(err.message);
     }
   };
+
   useEffect(() => {
     return setIsCancelled(true);
   }, []);

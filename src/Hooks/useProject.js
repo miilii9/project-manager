@@ -5,7 +5,6 @@ export const useProject = (collection, id) => {
   const [err, setErr] = useState(null);
   useEffect(() => {
     const ref = projectFirestore.collection(collection).doc(id);
-    console.log(collection, id);
     const unsubscribe = ref.onSnapshot(
       (snapshot) => {
         if (snapshot.data()) {

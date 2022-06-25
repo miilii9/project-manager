@@ -43,7 +43,6 @@ const projReducer = (state, action) => {
 export const useProjects = (collection) => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [state, dispatch] = useReducer(projReducer, initState);
-  // console.log(state);
   let res = projectFirestore.collection(collection);
   const ifNotCancelled = (action) => {
     if (!isCancelled) {
@@ -52,10 +51,8 @@ export const useProjects = (collection) => {
   };
   const addProject = async (data) => {
     dispatch({ type: "IS-PENDING" });
-    // console.log({ ...data });
     try {
       const addedDoc = await res.add({ ...data });
-      // const addedDocument = await ref.add({ ...doc, createdAt });
 
       ifNotCancelled({ type: "ADDED", payload: addedDoc });
     } catch (err) {

@@ -8,6 +8,19 @@
   margin-top: 3rem;
 }
 .comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.comment-div {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+.comments {
   margin-top: 1rem;
 }
 .comment-div {

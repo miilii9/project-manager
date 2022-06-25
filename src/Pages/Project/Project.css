@@ -2,19 +2,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   width: 94%;
   margin: auto;
+  /* margin-bottom: 0; */
+  /* height: 100vh; */
 }
 .proj-div {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: flex-start;
   width: 100%;
   margin: 2rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
   padding: 1rem;
+  /* max-height: 100%; */
   text-decoration: none;
 }
 .proj-header {

@@ -9,6 +9,11 @@ export default function Create() {
   const [projectName, setProjectName] = useState("");
   const [projectDetail, setProjectDetail] = useState("");
   const [projectDate, setProjectDate] = useState("");
+  const [development, setDevelopment] = useState("");
+  const [sales, setSales] = useState("");
+  const [design, setDesign] = useState("");
+  const [marketing, setMarketing] = useState("");
+  const [category, setCategory] = useState("");
   const { addProject } = useProjects("projects");
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -19,6 +24,7 @@ export default function Create() {
       projectDetail,
       projectName,
       createdBy: user.displayName,
+      category,
     });
     setProjectDate("");
     setProjectDetail("");
@@ -52,8 +58,21 @@ export default function Create() {
             value={projectDate}
           />
         </label>
-        <label className='create-projectNameLabel'>
+        <label
+          className='create-projectNameLabel custom-select custom-select'
+          styles={{ width: "200px" }}>
           <span>Project Catagory:</span>
+          <select
+            name='category'
+            id='project-select'
+            onChange={(e) => setCategory(e.target.value)}
+            value={category}>
+            <option value=''>--Please choose an option--</option>
+            <option value='development'>development</option>
+            <option value='design'>design</option>
+            <option value='marketing'>marketing</option>
+            <option value='sales'>sales</option>
+          </select>
         </label>
         <button className='create-submit-btn'>Add Project</button>
       </form>

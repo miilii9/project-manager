@@ -14,6 +14,7 @@
   overflow: hidden;
   text-decoration: none;
   margin-right: 1rem;
+  text-decoration: none;
 }
 .project-name {
   margin-top: 0.7rem;
@@ -43,4 +44,5 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }

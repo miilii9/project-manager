@@ -2,15 +2,28 @@ import React from "react";
 import { useState } from "react";
 import "./Create.css";
 import { useProjects } from "../../Hooks/useProjects";
+import { useAuth } from "../../Hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 export default function Create() {
   const [projectName, setProjectName] = useState("");
   const [projectDetail, setProjectDetail] = useState("");
   const [projectDate, setProjectDate] = useState("");
   const { addProject } = useProjects("projects");
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const formHandler = (e) => {
     e.preventDefault();
-    addProject({ projectDate, projectDetail, projectName });
+    addProject({
+      projectDate,
+      projectDetail,
+      projectName,
+      createdBy: user.displayName,
+    });
+    setProjectDate("");
+    setProjectDetail("");
+    setProjectName("");
+    navigate("/");
   };
   return (
     <div className='create'>

@@ -10,17 +10,23 @@ export default function Comments(id) {
         {documents && (
           <div>
             {documents.map((doc) => {
-              return (
-                <div key={doc.id} className='comment-div'>
-                  <h4 className='comment-name'>
-                    {doc.userName ? doc.userName : "unknown"}
-                  </h4>
-                  <p>
-                    {<span className='comment-day'>at {doc.commentTime}</span>}
-                  </p>
-                  <p className='comment-text'>{doc.newComment}</p>
-                </div>
-              );
+              if (doc.pageId === id) {
+                return (
+                  <div key={doc.id} className='comment-div'>
+                    <h4 className='comment-name'>
+                      {doc.userName ? doc.userName : "unknown"}
+                    </h4>
+                    <p>
+                      {
+                        <span className='comment-day'>
+                          at {doc.commentTime}
+                        </span>
+                      }
+                    </p>
+                    <p className='comment-text'>{doc.newComment}</p>
+                  </div>
+                );
+              }
             })}
           </div>
         )}

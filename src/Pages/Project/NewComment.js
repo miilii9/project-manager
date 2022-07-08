@@ -11,8 +11,8 @@ export default function NewComment({ id }) {
 
   const formHandler = (e) => {
     e.preventDefault();
-    const comTime = new Date();
-    const commentTime = comTime.toDateString();
+    const date = new Date();
+    const commentTime = date.toDateString();
     addComment({
       userName: user.displayName,
       commentTime,

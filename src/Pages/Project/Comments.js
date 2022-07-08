@@ -12,7 +12,9 @@ export default function Comments(id) {
             {documents.map((doc) => {
               return (
                 <div key={doc.id} className='comment-div'>
-                  <h4 className='comment-name'>{doc.userName}</h4>
+                  <h4 className='comment-name'>
+                    {doc.userName ? doc.userName : "unknown"}
+                  </h4>
                   <p>
                     {<span className='comment-day'>at {doc.commentTime}</span>}
                   </p>

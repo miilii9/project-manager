@@ -11,8 +11,8 @@ export default function NewComment({ id }) {
 
   const formHandler = (e) => {
     e.preventDefault();
-    const now = new Date();
-    const commentTime = now.getDate();
+    const comTime = new Date();
+    const commentTime = comTime.toDateString();
     addComment({
       userName: user.displayName,
       commentTime,
@@ -29,14 +29,9 @@ export default function NewComment({ id }) {
           className='comment-textarea'
           onChange={(e) => setNewComment(e.target.value)}
           rows='5'></textarea>
-        {/* {!isPending && !error &&  */}
+
         <button className='comment-btn'>Add comment</button>
-        {/* } */}
-        {/* {isPending && !error && (
-          <button className='comment-btn' disabled={true}>
-            Adding comment
-          </button>
-        )} */}
+
         {!isPending && error && (
           <button className='comment-btn' disabled={true}>
             {error}

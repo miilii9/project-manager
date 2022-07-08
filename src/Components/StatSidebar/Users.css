@@ -10,14 +10,16 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
+  width: 100%;
   color: var(--header-color);
   margin-top: 0.7rem;
+  padding: 0 1rem;
 }
 .user-stat {
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 50%;
   background-color: green;
-  margin-right: 0.2rem;
+  margin-right: 0.5rem;
+  display: inline-block;
 }

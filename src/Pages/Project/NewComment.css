@@ -5,7 +5,7 @@
   align-items: flex-start;
   width: 8rem;
   height: 8rem;
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 .newcomment > h2 {
   color: #000;
@@ -23,7 +23,11 @@
 .comment-textarea {
   resize: none;
   border-radius: 10px;
-  width: 100%;
+  width: 15rem;
+  border-radius: 15px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 .comment-btn {
   padding: 1rem;
@@ -32,4 +36,5 @@
   border: 1px solid var(--primary-color);
   border-radius: 5px;
   margin-top: 0.7rem;
+  cursor: pointer;
 }

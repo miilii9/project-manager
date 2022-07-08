@@ -28,7 +28,9 @@ export default function NewComment({ id }) {
         <textarea
           className='comment-textarea'
           onChange={(e) => setNewComment(e.target.value)}
-          rows='5'></textarea>
+          rows='7'
+          // cols='100'
+          value={newComment}></textarea>
 
         <button className='comment-btn'>Add comment</button>
 

@@ -17,15 +17,16 @@ export const useLogOut = () => {
     setError(null);
     setIsPending(true);
     try {
-      // sign user out
-      // projectFirestore
-      //   .collection("user")
-      //   .doc(user.uid)
-      //   .update({ onlineStat: false });
+      // changing online stat
+      await projectFirestore
+        .collection("users")
+        .doc(user.uid)
+        .update({ onlineStat: false });
+      // signing out
       await projectAuth.signOut();
       // dispatching signout
       setSignOutStat({ onlineStat: false });
-      dispatch({ type: "SIGN-OUT", payload: signOutStat });
+      dispatch({ type: "SIGN-OUT" });
       window.location.reload();
       // uptade state?
       if (!isCancelled) {
